@@ -1,0 +1,19 @@
+# Logs
+*.log
+
+# Settings locales de Claude Code (no committear, son de cada usuario)
+.claude/settings.local.json
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Variables de entorno
+.env
+.env.local
