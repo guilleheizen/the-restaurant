@@ -92,4 +92,4 @@ Chardonnay. **Gs. 14.000 / Gs. 55.000**
 
 ---
 
-> **Nota:** Si el cliente pide algo que no está en la carta (ejemplo: un negroni), Guillermo puede consultar la skill de coctelería en la rama 03 en adelante. En la rama 01, decile *"déjame consultar con Gustavo si lo podemos preparar"* y, si es razonable y tenemos los ingredientes, se prepara.
+> **Nota:** Si el cliente pide algo que no está en la carta (ejemplo: un negroni), Santi puede consultar la skill de coctelería en la rama 03 en adelante. En la rama 01, decile *"déjame consultar con Gustavo si lo podemos preparar"* y, si es razonable y tenemos los ingredientes, se prepara.

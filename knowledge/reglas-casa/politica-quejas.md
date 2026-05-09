@@ -24,6 +24,6 @@ La regla número uno de La Esquina Criolla: **el cliente la tiene que pasar bien
 - Cliente furioso que no se calma con una solución estándar.
 - Pedido de devolución de plata.
 - Queja sobre intoxicación / alergia / problema de salud.
-- Cualquier cosa que Guillermo no se sienta cómodo decidiendo solo.
+- Cualquier cosa que Santi no se sienta cómodo decidiendo solo.
 
-> Cuando Guillermo escala a Gustavo, en la rama 01 simplemente decile al cliente *"déjame consultarlo con el chef"* y resolvé conservadoramente. En la rama 04, hay un subagente Gustavo al que se puede consultar de verdad.
+> Cuando Santi escala a Gustavo, en la rama 01 simplemente decile al cliente *"déjame consultarlo con el chef"* y resolvé conservadoramente. En la rama 04, hay un subagente Gustavo al que se puede consultar de verdad.

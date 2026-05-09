@@ -74,7 +74,7 @@ En este repo vamos a construir un restaurante con varios agentes especializados 
 git checkout 01-base
 ```
 
-En esta rama hay **un solo agente** (Guillermo, el mesero) que hace todo: atiende, simula la cocina, cobra. Sin Skills, sin hooks, sin subagentes. Es el punto de partida — el restaurante minimal.
+En esta rama hay **un solo agente** (Santi, el mesero) que hace todo: atiende, simula la cocina, cobra. Sin Skills, sin hooks, sin subagentes. Es el punto de partida — el restaurante minimal.
 
 ### Concepto 1 — `CLAUDE.md`
 
@@ -88,7 +88,7 @@ En esta rama hay **un solo agente** (Guillermo, el mesero) que hace todo: atiend
 Soy un cliente. Atendeme.
 ```
 
-Vas a ver que Guillermo se presenta con onda, ofrece la carta y usa modismos rioplatenses. Sin que le hayas dicho nada más, ya sabe quién es y cómo hablar — porque `CLAUDE.md` se cargó al inicio.
+Vas a ver que Santi se presenta con onda, ofrece la carta y usa modismos rioplatenses. Sin que le hayas dicho nada más, ya sabe quién es y cómo hablar — porque `CLAUDE.md` se cargó al inicio.
 
 **Cómo lo explicarías.**
 > *"El manual del empleado pegado en la cocina. Antes de abrir, el mesero lo relee. Cada turno. No tiene que preguntarlo."*
@@ -111,7 +111,7 @@ Los **tokens** son la unidad en la que se mide. Cada palabra que entra y sale cu
 ¿Cuántas calorías tiene la milanesa napolitana?
 ```
 
-Guillermo no sabe — y eso está bien. El agente conoce sus límites. La info nutricional no está en `/knowledge/`, así que no se la inventa.
+Santi no sabe — y eso está bien. El agente conoce sus límites. La info nutricional no está en `/knowledge/`, así que no se la inventa.
 
 **Cómo lo explicarías.**
 > *"El mesero tiene memoria de corto plazo: lo que pasó este turno. Si le seguís hablando, se empieza a olvidar de lo primero. Y los tokens son las palabras que escucha y dice en una jornada — cada palabra de más, pagás."*
@@ -132,7 +132,7 @@ Guillermo no sabe — y eso está bien. El agente conoce sus límites. La info n
 ¿Qué me recomendás de tomar con un asado?
 ```
 
-Guillermo recomienda Malbec citando la regla de maridajes (que vive en `knowledge/reglas-casa/recomendaciones-chef.md`). Si abrís ese archivo, vas a ver que la respuesta sale literalmente de ahí.
+Santi recomienda Malbec citando la regla de maridajes (que vive en `knowledge/reglas-casa/recomendaciones-chef.md`). Si abrís ese archivo, vas a ver que la respuesta sale literalmente de ahí.
 
 **Cómo lo explicarías.**
 > *"Carpetas en el back del restaurante: el menú está acá, las recetas allá, las reglas en otro cajón. El mesero no se lo aprende de memoria, va y consulta."*
@@ -163,7 +163,7 @@ Acá agregamos **Skills** — habilidades que viven en `.claude/skills/<nombre>/
 /tomar-pedido
 ```
 
-Guillermo arranca el flujo completo en una sola tirada: saludo → invitación a ordenar. Sin que hayas escrito un prompt largo.
+Santi arranca el flujo completo en una sola tirada: saludo → invitación a ordenar. Sin que hayas escrito un prompt largo.
 
 **Cómo lo explicarías.**
 > *"El atajo del mesero. Llegás al bar y decís 'lo de siempre'. El mesero sabe: cortado en jarrito, dos medialunas. No le tuviste que explicar nada."*
@@ -219,7 +219,7 @@ Hasta ahora todo lo que hicimos depende del LLM: las reglas de `CLAUDE.md`, las 
 Quiero una mila.
 ```
 
-Sin guarnición, sin bebida, sin contexto. Guillermo va a intentar confirmar el pedido pero el hook lo bloquea (exit code 2) porque falta estructura. Guillermo se da cuenta, pide aclaraciones al cliente, y rehace el pedido bien. En la consola vas a ver que el hook se disparó.
+Sin guarnición, sin bebida, sin contexto. Santi va a intentar confirmar el pedido pero el hook lo bloquea (exit code 2) porque falta estructura. Santi se da cuenta, pide aclaraciones al cliente, y rehace el pedido bien. En la consola vas a ver que el hook se disparó.
 
 **Cómo lo explicarías.**
 > *"El cocinero mira cada plato antes de que salga. Si el plato no está bien, no sale. Pasa automáticamente, sin que el mesero tenga que pedirlo."*
@@ -240,7 +240,7 @@ Sin guarnición, sin bebida, sin contexto. Guillermo va a intentar confirmar el 
 /cerrar-mesa
 ```
 
-Guillermo cierra la cuenta. Después, abrí `pedidos-cerrados.log` — vas a ver una línea nueva con la fecha, los items y el total.
+Santi cierra la cuenta. Después, abrí `pedidos-cerrados.log` — vas a ver una línea nueva con la fecha, los items y el total.
 
 **Cómo lo explicarías.**
 > *"Después de servir, el mesero anota en el cuaderno: qué mesa, qué pidió, a qué hora. No bloquea nada, solo registra."*
@@ -257,7 +257,7 @@ Guillermo cierra la cuenta. Después, abrí `pedidos-cerrados.log` — vas a ver
 git checkout 04-agents
 ```
 
-Hasta acá Guillermo era todo: mesero, cocinero, cajero. Funciona, pero el contexto se le llena con cosas que no le sirven (la receta del locro mientras está cobrando una pizza). Toca dividir.
+Hasta acá Santi era todo: mesero, cocinero, cajero. Funciona, pero el contexto se le llena con cosas que no le sirven (la receta del locro mientras está cobrando una pizza). Toca dividir.
 
 ### Concepto 1 — Subagentes
 
@@ -275,12 +275,12 @@ Soy un cliente. Quiero milanesa napolitana con papas y un fernet con coca.
 
 Lo que vas a ver:
 
-1. **Guillermo atiende y confirma** (su voz, atenta, modismos).
+1. **Santi atiende y confirma** (su voz, atenta, modismos).
 2. **Invoca a Gustavo.** La respuesta cambia: APARECEN LAS MAYÚSCULAS, los gritos, el entusiasmo. Es un agente **distinto** trabajando.
 3. Gustavo confirma stock y "prepara" el plato.
-4. Vuelve a Guillermo, que entrega.
-5. Cliente pide la cuenta → Guillermo invoca al cajero, que devuelve total desglosado en guaraníes.
-6. Guillermo presenta la cuenta.
+4. Vuelve a Santi, que entrega.
+5. Cliente pide la cuenta → Santi invoca al cajero, que devuelve total desglosado en guaraníes.
+6. Santi presenta la cuenta.
 
 **Cómo lo explicarías.**
 > *"Hasta acá teníamos un mesero solo, que también cocinaba y cobraba. Pero un restaurante real tiene equipo. Cada uno con su contexto, sus tools, su especialidad."*
@@ -296,7 +296,7 @@ Lo que vas a ver:
 **Dónde lo ves en el repo.** Volvé a [`.claude/agents/`](.claude/agents/) y mirá las `description` de cada subagente:
 - **Gustavo cocina pero NO atiende clientes** (no tiene tools de chat).
 - **Cajero cobra pero NO recomienda platos.**
-- **Guillermo orquesta, pero NO toca la receta.**
+- **Santi orquesta, pero NO toca la receta.**
 
 Cada uno hace una cosa, la hace bien.
 
@@ -365,7 +365,7 @@ Después de esto, Claude tiene tools como `read_file`, `write_file`, `list_direc
 ¿Qué platos tienen sin lactosa?
 ```
 
-Guillermo invoca el filesystem MCP, lista los JSON del menú, los parsea, filtra por tag `contiene-lactosa: false` y te devuelve los que cumplen. En la barra de Claude Code vas a ver que se llamó al MCP (no a `Read` del repo).
+Santi invoca el filesystem MCP, lista los JSON del menú, los parsea, filtra por tag `contiene-lactosa: false` y te devuelve los que cumplen. En la barra de Claude Code vas a ver que se llamó al MCP (no a `Read` del repo).
 
 **Cómo lo explicarías.**
 > *"El proveedor que el mesero llama por teléfono. Si se acaba el queso, el mesero llama: 'mandame 5 kilos'. El proveedor es una empresa externa, con sus propias reglas. El mesero no sabe cómo lo producen, solo sabe el número y qué pedir."*

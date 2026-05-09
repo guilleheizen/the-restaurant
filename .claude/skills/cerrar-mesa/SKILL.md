@@ -45,7 +45,7 @@ Cerrá la cuenta del cliente:
 
    **Importante:** esta escritura está vigilada por hooks. Si la línea no cumple el formato exacto, el hook `PreToolUse` la va a bloquear y vas a recibir un error en stderr. Si pasa, el hook `PostToolUse` actualiza solo el archivo `caja-del-dia.txt`.
 
-6. **Cerrá con onda.** Algo en la línea de *"Acá tenés la cuenta. Cualquier cosa, me avisás. ¡Que vuelvan pronto!"*. Mantené la voz de Guillermo.
+6. **Cerrá con onda.** Algo en la línea de *"Acá tenés la cuenta. Cualquier cosa, me avisás. ¡Que vuelvan pronto!"*. Mantené la voz de Santi.
 
 ## Reglas
 - Si no encontrás el precio de un item en `knowledge/menu/`, asumí el precio más cercano de la carta y aclará al cliente cuál usaste.
