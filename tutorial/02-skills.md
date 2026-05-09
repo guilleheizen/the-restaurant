@@ -45,7 +45,7 @@ Pedile que tipee:
 /tomar-pedido
 ```
 
-Aclará: *"Vas a ver que Guillermo arranca el flujo completo en una sola tirada — saludo, oferta de carta, propuesta de recomendación. Sin que vos hayas tipeado el prompt largo. Cuando termines (podés llegar hasta el pedido confirmado o cortar antes), decime 'siguiente'."*
+Aclará: *"Vas a ver que Santi arranca el flujo completo en una sola tirada — saludo, oferta de carta, propuesta de recomendación. Sin que vos hayas tipeado el prompt largo. Cuando termines (podés llegar hasta el pedido confirmado o cortar antes), decime 'siguiente'."*
 
 ### Después del prompt (cuando el usuario dice "siguiente")
 Comentá brevemente:
@@ -80,7 +80,7 @@ Pedile que tipee:
 Quiero un negroni con un toque extra de Campari.
 ```
 
-Aclará: *"Claude debería detectar 'negroni' (no está en la carta de tragos) + la variación ('toque extra de Campari') y autocargarse la skill `cocteleria`. Después, Guillermo te confirma el trago con el ajuste leído de `recetas/negroni.md`. Decime 'siguiente' cuando termines."*
+Aclará: *"Claude debería detectar 'negroni' (no está en la carta de tragos) + la variación ('toque extra de Campari') y autocargarse la skill `cocteleria`. Después, Santi te confirma el trago con el ajuste leído de `recetas/negroni.md`. Decime 'siguiente' cuando termines."*
 
 ### Después del prompt
 Comentá brevemente:

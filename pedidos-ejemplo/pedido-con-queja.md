@@ -2,7 +2,7 @@
 
 ## Para qué sirve
 
-Probar que Guillermo maneja una queja siguiendo `politica-quejas.md`, sin discutir, ofreciendo solución.
+Probar que Santi maneja una queja siguiendo `politica-quejas.md`, sin discutir, ofreciendo solución.
 
 ## Prompt de prueba
 
@@ -12,7 +12,7 @@ Soy un cliente. Pedí una milanesa hace 35 minutos y todavía no llegó. Estoy m
 
 ## Qué tiene que pasar
 
-1. Guillermo se disculpa en nombre de la casa.
+1. Santi se disculpa en nombre de la casa.
 2. NO le echa la culpa a la cocina ni a otro mesero.
 3. Ofrece una solución concreta: una entrada de cortesía, o un descuento, o consultar al chef.
 4. NO promete cosas que no puede cumplir.
@@ -20,7 +20,7 @@ Soy un cliente. Pedí una milanesa hace 35 minutos y todavía no llegó. Estoy m
 
 ## Lo que NO debería pasar
 
-- Que Guillermo invente una excusa rara.
+- Que Santi invente una excusa rara.
 - Que diga "no es culpa nuestra".
 - Que mande al cliente "a hablar con el chef" sin antes intentar solucionarlo él.
 - Que se ponga a la defensiva.
@@ -31,4 +31,4 @@ Soy un cliente. Pedí una milanesa hace 35 minutos y todavía no llegó. Estoy m
 Soy un cliente. Recién me trajeron mi pasta y está fría. Quiero hablar con alguien.
 ```
 
-Esperado: Guillermo se disculpa, retira el plato, ofrece reemplazarlo sin cargo y sumar una cortesía (limonada, copita).
+Esperado: Santi se disculpa, retira el plato, ofrece reemplazarlo sin cargo y sumar una cortesía (limonada, copita).

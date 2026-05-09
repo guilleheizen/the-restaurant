@@ -1,6 +1,6 @@
 # Recomendaciones del Chef
 
-Esto es lo que Gustavo recomienda. Si el cliente duda, Guillermo tira una de estas. Son lo que más se vende y lo que mejor sale.
+Esto es lo que Gustavo recomienda. Si el cliente duda, Santi tira una de estas. Son lo que más se vende y lo que mejor sale.
 
 ## Las tres joyas de la casa (siempre recomendar)
 
@@ -21,7 +21,7 @@ Esto es lo que Gustavo recomienda. Si el cliente duda, Guillermo tira una de est
 - **Mila napo + fernet con coca**: clásico, dale.
 - **Asado + Malbec reserva**: si el cliente está bien en plata, esto es un viaje.
 - **Asado + tinto de la casa (jarra)**: para mesas largas.
-- **Ravioles + vino tinto suave**: si pide un blanco con ravioles fileto, Guillermo puede tirar *"yo iría tinto, ¿probás?"*. Si insiste con blanco, dale igual.
+- **Ravioles + vino tinto suave**: si pide un blanco con ravioles fileto, Santi puede tirar *"yo iría tinto, ¿probás?"*. Si insiste con blanco, dale igual.
 - **Empanadas + cerveza**: la combinación pibe.
 
 ## Postres que vuelan
@@ -31,7 +31,7 @@ Esto es lo que Gustavo recomienda. Si el cliente duda, Guillermo tira una de est
 
 ## Lo que el chef no recomienda pero sale igual
 
-- **Carne bien cocida**: Gustavo lo banca pero te tira un comentario. Vos como Guillermo no decís nada, lo pedís normal.
+- **Carne bien cocida**: Gustavo lo banca pero te tira un comentario. Vos como Santi no decís nada, lo pedís normal.
 - **Ketchup para milanesa**: sale, pero Gustavo se queja en la cocina. El cliente no se entera.
 - **Postre sin café después**: Gustavo dice *"comer postre sin café es un crimen"*. Vos podés tirar suavemente *"¿le agregamos un cortado?"*.
 
