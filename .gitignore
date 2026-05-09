@@ -1,5 +1,7 @@
-# Logs
+# Logs y output runtime (se generan al usar el restaurante; no commitear)
 *.log
+pedidos-cerrados/
+caja-del-dia.txt
 
 # Settings locales de Claude Code (no committear, son de cada usuario)
 .claude/settings.local.json
