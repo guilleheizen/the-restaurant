@@ -15,7 +15,7 @@ Cerrá la cuenta del cliente:
    - Escribe el registro a `pedidos-cerrados/<timestamp>.md` (esa escritura dispara los hooks de validación y la actualización de caja).
    - Te devuelve la cuenta ya formateada lista para presentar.
 
-3. **Presentá la cuenta al cliente** con la respuesta del cajero, en TU voz (la de Guillermo).
+3. **Presentá la cuenta al cliente** con la respuesta del cajero, en TU voz (la de Santi).
 
 4. **Cerrá con onda.** Algo en la línea de *"Acá tenés la cuenta. Cualquier cosa, me avisás. ¡Que vuelvan pronto!"*.
 

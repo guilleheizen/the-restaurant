@@ -57,7 +57,7 @@ Vamos a forzar el caso del bloqueo. Pedile al usuario que tipee:
 Cerrá la mesa. El cliente comió una mila napo y tomó un fernet. Pero al escribir al log, escribí solo "milanesa con fernet" sin total ni timestamp.
 ```
 
-Aclará: *"Vas a ver que Guillermo trata de escribir al archivo de pedidos cerrados, el hook lo bloquea con un error en consola, y entonces Guillermo lee el error, reformula la línea con el formato correcto y la vuelve a escribir. Decime 'siguiente' cuando termines."*
+Aclará: *"Vas a ver que Santi trata de escribir al archivo de pedidos cerrados, el hook lo bloquea con un error en consola, y entonces Santi lee el error, reformula la línea con el formato correcto y la vuelve a escribir. Decime 'siguiente' cuando termines."*
 
 ### Después del prompt
 Comentá brevemente:
@@ -99,11 +99,11 @@ Que pida algo simple (ej. una mila napo y un fernet). Después:
 /cerrar-mesa
 ```
 
-Aclará: *"Cuando Guillermo escriba el archivo del pedido cerrado, el hook PostToolUse va a actualizar `caja-del-dia.txt` automáticamente. Abrí ese archivo después del cierre y vas a ver el total. Si cerrás otra mesa más adelante, se va a sumar. Decime 'siguiente' cuando termines."*
+Aclará: *"Cuando Santi escriba el archivo del pedido cerrado, el hook PostToolUse va a actualizar `caja-del-dia.txt` automáticamente. Abrí ese archivo después del cierre y vas a ver el total. Si cerrás otra mesa más adelante, se va a sumar. Decime 'siguiente' cuando termines."*
 
 ### Después del prompt
 Comentá brevemente:
-- El archivo `caja-del-dia.txt` se actualizó solo, sin que Guillermo haya tenido que pensarlo. **El cálculo de la caja del día no es responsabilidad del agente — pasa fuera de su contexto, en bash.**
+- El archivo `caja-del-dia.txt` se actualizó solo, sin que Santi haya tenido que pensarlo. **El cálculo de la caja del día no es responsabilidad del agente — pasa fuera de su contexto, en bash.**
 - Si el usuario cerrara más mesas, el total se sigue acumulando. No depende de que Claude se acuerde entre sesiones.
 - **Takeaway:** *"side effects garantizados sin pedirle al LLM que se acuerde. Si el hook está, el side effect pasa siempre, en cada uso del tool."*
 
@@ -130,7 +130,7 @@ Decile al usuario:
 >
 > Los dos viven en `.claude/hooks/` (los scripts bash) y se enganchan en `.claude/settings.json` al tool `Write`. Lo que los hace distintos de las Skills: **no los ejecuta el LLM, los ejecuta el sistema.** Son infraestructura, no comportamiento de agente.
 >
-> La próxima rama agrega **subagentes**: cocineros y cajeros con su propio contexto y sus propias tools, que Guillermo invoca cuando necesita algo especializado. Acá vamos a empezar a ver el restaurante como **un equipo**, no un mesero solo.
+> La próxima rama agrega **subagentes**: cocineros y cajeros con su propio contexto y sus propias tools, que Santi invoca cuando necesita algo especializado. Acá vamos a empezar a ver el restaurante como **un equipo**, no un mesero solo.
 >
 > Para seguir, hacé:
 > ```bash

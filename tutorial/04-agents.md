@@ -12,7 +12,7 @@ En esta rama aparece la carpeta `.claude/agents/` con dos subagentes:
 - `gustavo.md` — el cocinero. Habla en MAYÚSCULAS.
 - `cajero.md` — el cajero. Serio y formal.
 
-Las skills `tomar-pedido` y `cerrar-mesa` (que en la rama anterior hacían todo solas) ahora **delegan**: Guillermo es el orquestador, Gustavo cocina, el cajero cobra.
+Las skills `tomar-pedido` y `cerrar-mesa` (que en la rama anterior hacían todo solas) ahora **delegan**: Santi es el orquestador, Gustavo cocina, el cajero cobra.
 
 ---
 
@@ -21,7 +21,7 @@ Las skills `tomar-pedido` y `cerrar-mesa` (que en la rama anterior hacían todo 
 Decile al usuario, en una o dos frases:
 - Que pasó a la rama `04-agents`.
 - Que el restaurante deja de ser un mesero solo y se convierte en un equipo.
-- Que la diferencia visible va a ser que las respuestas van a tener "voces" distintas — Guillermo tranquilo, Gustavo gritando en mayúsculas, el cajero serio.
+- Que la diferencia visible va a ser que las respuestas van a tener "voces" distintas — Santi tranquilo, Gustavo gritando en mayúsculas, el cajero serio.
 
 Cerrá con *"¿Arrancamos? Decime 'dale' cuando estés listo."* y esperá.
 
@@ -30,7 +30,7 @@ Cerrá con *"¿Arrancamos? Decime 'dale' cuando estés listo."* y esperá.
 ## Concepto 1 — Subagentes con contexto fresco
 
 ### Explicación que tenés que dar
-Un **subagente** es un agente con su propio contexto, sus propias tools y su propia descripción de cuándo invocarlo. El agente "padre" (en este caso Guillermo, que es el Claude principal con el `CLAUDE.md` cargado) lo invoca cuando hace falta.
+Un **subagente** es un agente con su propio contexto, sus propias tools y su propia descripción de cuándo invocarlo. El agente "padre" (en este caso Santi, que es el Claude principal con el `CLAUDE.md` cargado) lo invoca cuando hace falta.
 
 **Lo crucial:** el subagente arranca con **contexto fresco**. NO ve la conversación con el cliente. Solo recibe la comanda que el padre le pasa. Eso es lo que lo hace eficiente:
 - El cocinero no se "llena la cabeza" con la charla sobre el clima entre el cliente y el mesero.
@@ -55,11 +55,11 @@ Soy un cliente. Quiero milanesa napolitana con papas y un fernet con coca.
 ```
 
 Aclará lo que va a ver:
-1. **Guillermo atiende y confirma** (voz cálida, modismos).
+1. **Santi atiende y confirma** (voz cálida, modismos).
 2. **Invoca a Gustavo.** Va a aparecer una llamada a Task tool con `subagent_type: gustavo`. La respuesta vuelve **EN MAYÚSCULAS, GRITANDO** — esa es la señal visual de que es otro agente.
-3. **Vuelve a Guillermo**, que toma lo que dijo Gustavo y se lo presenta al cliente con su propio tono.
+3. **Vuelve a Santi**, que toma lo que dijo Gustavo y se lo presenta al cliente con su propio tono.
 
-Después decile: *"Cuando termines de ver el flujo de la cocina, pedile la cuenta a Guillermo (ej. 'me cobrás'). Vas a ver que Guillermo invoca al cajero, que escribe al log y devuelve la cuenta formateada. Ahí decime 'siguiente'."*
+Después decile: *"Cuando termines de ver el flujo de la cocina, pedile la cuenta a Santi (ej. 'me cobrás'). Vas a ver que Santi invoca al cajero, que escribe al log y devuelve la cuenta formateada. Ahí decime 'siguiente'."*
 
 ### Después del prompt (cuando dice 'siguiente')
 Comentá brevemente:
@@ -111,7 +111,7 @@ Comentá:
 Decile al usuario:
 
 > "Listo. Viste los dos conceptos de `04-agents`:
-> - **Subagentes con contexto fresco** — Gustavo y el cajero, cada uno con su voz, su workflow y sus tools restringidas. Guillermo orquesta.
+> - **Subagentes con contexto fresco** — Gustavo y el cajero, cada uno con su voz, su workflow y sus tools restringidas. Santi orquesta.
 > - **Cuándo dividir** — solo cuando hay problema concreto. Subagentes no son una mejora automática.
 >
 > Los subagentes viven en `.claude/agents/<nombre>.md`. La `description` del frontmatter es lo que Claude lee para decidir cuándo invocarlos.
