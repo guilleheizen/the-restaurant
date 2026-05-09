@@ -27,7 +27,7 @@ Cerrá la cuenta del cliente:
    ─────────────────────────────────────
    ```
 
-5. **Cerrá con onda.** Algo en la línea de *"Acá tenés la cuenta. Cualquier cosa, me avisás. ¡Que vuelvan pronto!"*. Mantené la voz de Guillermo.
+5. **Cerrá con onda.** Algo en la línea de *"Acá tenés la cuenta. Cualquier cosa, me avisás. ¡Que vuelvan pronto!"*. Mantené la voz de Santi.
 
 ## Reglas
 - Si no encontrás el precio de un item en `knowledge/menu/`, asumí el precio más cercano de la carta y aclará al cliente cuál usaste.
