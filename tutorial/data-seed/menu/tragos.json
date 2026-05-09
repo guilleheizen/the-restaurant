@@ -1,0 +1,70 @@
+[
+  {
+    "id": "fernet-coca",
+    "nombre": "Fernet con Coca",
+    "categoria": "trago",
+    "precio_gs": 18000,
+    "descripcion": "El más pedido. Servido con hielo en vaso largo.",
+    "ingredientes_consumo": {
+      "fernet": 0.05,
+      "coca-cola": 1
+    },
+    "tags": ["estrella", "alcohol"]
+  },
+  {
+    "id": "gin-tonic",
+    "nombre": "Gin Tonic",
+    "categoria": "trago",
+    "precio_gs": 32000,
+    "descripcion": "Gin nacional con tónica y pomelo.",
+    "ingredientes_consumo": {
+      "gin": 0.06,
+      "tonica": 1
+    },
+    "tags": ["alcohol"]
+  },
+  {
+    "id": "vino-tinto-casa-copa",
+    "nombre": "Vino tinto de la casa (copa)",
+    "categoria": "trago",
+    "precio_gs": 14000,
+    "descripcion": "Malbec joven, jarra patas.",
+    "ingredientes_consumo": {
+      "vino-tinto-casa": 0.15
+    },
+    "tags": ["alcohol"]
+  },
+  {
+    "id": "malbec-reserva",
+    "nombre": "Malbec reserva (botella)",
+    "categoria": "trago",
+    "precio_gs": 95000,
+    "descripcion": "Botella entera de Malbec reserva.",
+    "ingredientes_consumo": {
+      "malbec-reserva": 1
+    },
+    "tags": ["alcohol"]
+  },
+  {
+    "id": "agua-mineral",
+    "nombre": "Agua mineral (medio litro)",
+    "categoria": "trago",
+    "precio_gs": 8000,
+    "descripcion": "Con o sin gas.",
+    "ingredientes_consumo": {
+      "agua-mineral": 1
+    },
+    "tags": ["sin-alcohol"]
+  },
+  {
+    "id": "quilmes-1l",
+    "nombre": "Quilmes (botella 1L)",
+    "categoria": "trago",
+    "precio_gs": 28000,
+    "descripcion": "Cerveza Quilmes botella grande.",
+    "ingredientes_consumo": {
+      "quilmes-1l": 1
+    },
+    "tags": ["alcohol"]
+  }
+]

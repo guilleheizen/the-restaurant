@@ -1,0 +1,39 @@
+{
+  "nalga":           { "cantidad": 12,   "unidad": "kg",     "umbral_alerta": 3 },
+  "tira-asado":      { "cantidad": 8,    "unidad": "kg",     "umbral_alerta": 2 },
+  "vacio":           { "cantidad": 6,    "unidad": "kg",     "umbral_alerta": 2 },
+  "entrana":         { "cantidad": 4,    "unidad": "kg",     "umbral_alerta": 1 },
+  "pollo-cuarto":    { "cantidad": 10,   "unidad": "unidad", "umbral_alerta": 2 },
+  "pollo-suprema":   { "cantidad": 8,    "unidad": "unidad", "umbral_alerta": 2 },
+  "chorizo":         { "cantidad": 20,   "unidad": "unidad", "umbral_alerta": 5 },
+  "morcilla":        { "cantidad": 12,   "unidad": "unidad", "umbral_alerta": 3 },
+  "jamon-crudo":     { "cantidad": 2,    "unidad": "kg",     "umbral_alerta": 0.5 },
+  "jamon-cocido":    { "cantidad": 3,    "unidad": "kg",     "umbral_alerta": 0.5 },
+
+  "muzzarella":      { "cantidad": 10,   "unidad": "kg",     "umbral_alerta": 2 },
+  "pategras":        { "cantidad": 4,    "unidad": "kg",     "umbral_alerta": 1 },
+  "reggianito":      { "cantidad": 2,    "unidad": "kg",     "umbral_alerta": 0.5 },
+  "provoleta":       { "cantidad": 8,    "unidad": "unidad", "umbral_alerta": 2 },
+  "ricota":          { "cantidad": 6,    "unidad": "kg",     "umbral_alerta": 1 },
+  "mascarpone":      { "cantidad": 1,    "unidad": "kg",     "umbral_alerta": 0.3 },
+
+  "papa":            { "cantidad": 25,   "unidad": "kg",     "umbral_alerta": 5 },
+  "espinaca":        { "cantidad": 4,    "unidad": "kg",     "umbral_alerta": 1 },
+  "manzana":         { "cantidad": 3,    "unidad": "kg",     "umbral_alerta": 1 },
+  "salsa-tomate":    { "cantidad": 5,    "unidad": "kg",     "umbral_alerta": 1 },
+
+  "harina":          { "cantidad": 30,   "unidad": "kg",     "umbral_alerta": 5 },
+  "pan-rallado":     { "cantidad": 5,    "unidad": "kg",     "umbral_alerta": 1 },
+  "huevos":          { "cantidad": 180,  "unidad": "unidad", "umbral_alerta": 30 },
+  "dulce-de-leche":  { "cantidad": 4,    "unidad": "kg",     "umbral_alerta": 1 },
+  "dulce-membrillo": { "cantidad": 2,    "unidad": "kg",     "umbral_alerta": 0.5 },
+
+  "fernet":          { "cantidad": 4,    "unidad": "L",      "umbral_alerta": 1 },
+  "gin":             { "cantidad": 2,    "unidad": "L",      "umbral_alerta": 0.5 },
+  "coca-cola":       { "cantidad": 60,   "unidad": "unidad", "umbral_alerta": 10 },
+  "tonica":          { "cantidad": 30,   "unidad": "unidad", "umbral_alerta": 5 },
+  "agua-mineral":    { "cantidad": 40,   "unidad": "unidad", "umbral_alerta": 8 },
+  "quilmes-1l":      { "cantidad": 24,   "unidad": "unidad", "umbral_alerta": 5 },
+  "vino-tinto-casa": { "cantidad": 12,   "unidad": "L",      "umbral_alerta": 2 },
+  "malbec-reserva":  { "cantidad": 6,    "unidad": "unidad", "umbral_alerta": 2 }
+}

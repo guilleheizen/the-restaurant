@@ -1,0 +1,83 @@
+[
+  {
+    "id": "milanesa-napolitana",
+    "nombre": "Milanesa Napolitana (la del abuelo)",
+    "categoria": "principal",
+    "precio_gs": 65000,
+    "descripcion": "Especialidad. Nalga con muzzarella, salsa de tomate casera, jamón cocido y orégano. Con papas fritas.",
+    "ingredientes_consumo": {
+      "nalga": 0.2,
+      "muzzarella": 0.15,
+      "salsa-tomate": 0.1,
+      "jamon-cocido": 0.05,
+      "pan-rallado": 0.05,
+      "huevos": 1,
+      "papa": 0.3
+    },
+    "tags": ["estrella", "contiene-lactosa", "contiene-gluten", "contiene-carne"]
+  },
+  {
+    "id": "milanesa-simple",
+    "nombre": "Milanesa simple",
+    "categoria": "principal",
+    "precio_gs": 52000,
+    "descripcion": "Milanesa de nalga con guarnición a elección.",
+    "ingredientes_consumo": {
+      "nalga": 0.2,
+      "pan-rallado": 0.05,
+      "huevos": 1,
+      "papa": 0.3
+    },
+    "tags": ["contiene-gluten", "contiene-carne"]
+  },
+  {
+    "id": "asado-de-tira",
+    "nombre": "Asado de tira (especialidad)",
+    "categoria": "principal",
+    "precio_gs": 95000,
+    "descripcion": "Tira de asado a la parrilla, jugosa por dentro y crocante por fuera. Con guarnición.",
+    "ingredientes_consumo": {
+      "tira-asado": 0.4,
+      "papa": 0.3
+    },
+    "tags": ["estrella", "contiene-carne"]
+  },
+  {
+    "id": "ravioles-ricota-espinaca",
+    "nombre": "Ravioles de ricota y espinaca",
+    "categoria": "principal",
+    "precio_gs": 58000,
+    "descripcion": "Pasta casera con salsa a elección.",
+    "ingredientes_consumo": {
+      "harina": 0.2,
+      "ricota": 0.15,
+      "espinaca": 0.1,
+      "huevos": 1
+    },
+    "tags": ["estrella", "contiene-lactosa", "contiene-gluten", "vegetariano"]
+  },
+  {
+    "id": "suprema-maryland",
+    "nombre": "Suprema Maryland",
+    "categoria": "principal",
+    "precio_gs": 62000,
+    "descripcion": "Suprema de pollo con panqueque, banana frita, choclo y arvejas.",
+    "ingredientes_consumo": {
+      "pollo-suprema": 1,
+      "harina": 0.05
+    },
+    "tags": ["contiene-gluten", "contiene-carne"]
+  },
+  {
+    "id": "pollo-al-horno",
+    "nombre": "Pollo al horno con papas",
+    "categoria": "principal",
+    "precio_gs": 55000,
+    "descripcion": "Cuarto de pollo dorado al horno con papas españolas.",
+    "ingredientes_consumo": {
+      "pollo-cuarto": 1,
+      "papa": 0.4
+    },
+    "tags": ["contiene-carne"]
+  }
+]

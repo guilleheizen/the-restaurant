@@ -1,0 +1,51 @@
+[
+  {
+    "id": "flan-ddl",
+    "nombre": "Flan casero con dulce de leche",
+    "categoria": "postre",
+    "precio_gs": 28000,
+    "descripcion": "El postre que se vende solo. Flan de huevo, dulce de leche por arriba.",
+    "ingredientes_consumo": {
+      "huevos": 2,
+      "dulce-de-leche": 0.05
+    },
+    "tags": ["estrella", "contiene-lactosa"]
+  },
+  {
+    "id": "panqueque-manzana",
+    "nombre": "Panqueque de manzana",
+    "categoria": "postre",
+    "precio_gs": 32000,
+    "descripcion": "Panqueque tibio con manzanas caramelizadas y bocha de helado de crema.",
+    "ingredientes_consumo": {
+      "harina": 0.05,
+      "huevos": 1,
+      "manzana": 0.2
+    },
+    "tags": ["contiene-lactosa", "contiene-gluten"]
+  },
+  {
+    "id": "vigilante",
+    "nombre": "Vigilante (queso y dulce)",
+    "categoria": "postre",
+    "precio_gs": 22000,
+    "descripcion": "Pategrás con dulce de membrillo. Postre clásico de bodegón.",
+    "ingredientes_consumo": {
+      "pategras": 0.05,
+      "dulce-membrillo": 0.05
+    },
+    "tags": ["contiene-lactosa"]
+  },
+  {
+    "id": "tiramisu",
+    "nombre": "Tiramisú casero",
+    "categoria": "postre",
+    "precio_gs": 35000,
+    "descripcion": "Bizcochos empapados en café, mascarpone, cacao.",
+    "ingredientes_consumo": {
+      "mascarpone": 0.1,
+      "huevos": 1
+    },
+    "tags": ["contiene-lactosa", "contiene-gluten"]
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "provoleta",
+    "nombre": "Provoleta a la parrilla",
+    "categoria": "entrada",
+    "precio_gs": 38000,
+    "descripcion": "Provoleta entera con orégano y aceite de oliva. Con pan tostado.",
+    "ingredientes_consumo": {
+      "provoleta": 1,
+      "harina": 0.05
+    },
+    "tags": ["contiene-lactosa", "contiene-gluten", "vegetariano"]
+  },
+  {
+    "id": "tabla-criolla",
+    "nombre": "Tabla criolla (para 2)",
+    "categoria": "entrada",
+    "precio_gs": 75000,
+    "descripcion": "Salame, pategrás, reggianito, jamón crudo, aceitunas, tostadas y mermelada de tomate.",
+    "ingredientes_consumo": {
+      "pategras": 0.1,
+      "reggianito": 0.05,
+      "jamon-crudo": 0.1
+    },
+    "tags": ["contiene-lactosa", "contiene-gluten", "contiene-carne"]
+  },
+  {
+    "id": "choripan",
+    "nombre": "Choripán al pan",
+    "categoria": "entrada",
+    "precio_gs": 28000,
+    "descripcion": "Chorizo parrillero a la cruz con pan crocante y chimichurri.",
+    "ingredientes_consumo": {
+      "chorizo": 1,
+      "harina": 0.1
+    },
+    "tags": ["contiene-gluten", "contiene-carne"]
+  },
+  {
+    "id": "empanadas-carne",
+    "nombre": "Empanadas de carne (3 unidades)",
+    "categoria": "entrada",
+    "precio_gs": 32000,
+    "descripcion": "Carne cortada a cuchillo, cebolla, comino, huevo duro y aceituna. Horneadas.",
+    "ingredientes_consumo": {
+      "nalga": 0.15,
+      "harina": 0.1,
+      "huevos": 1
+    },
+    "tags": ["contiene-gluten", "contiene-carne"]
+  },
+  {
+    "id": "empanadas-jamon-queso",
+    "nombre": "Empanadas de jamón y queso (3 unidades)",
+    "categoria": "entrada",
+    "precio_gs": 30000,
+    "descripcion": "Las más pedidas por los chicos. Horneadas.",
+    "ingredientes_consumo": {
+      "jamon-cocido": 0.1,
+      "muzzarella": 0.1,
+      "harina": 0.1
+    },
+    "tags": ["contiene-lactosa", "contiene-gluten", "contiene-carne"]
+  }
+]
