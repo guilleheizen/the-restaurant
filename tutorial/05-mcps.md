@@ -120,7 +120,7 @@ Pedile al usuario que tipee:
 ¿Qué platos tienen sin lactosa?
 ```
 
-Aclará: *"Guillermo va a invocar `mcp__filesystem__list_directory` sobre `menu/` y después `mcp__filesystem__read_file` para cada JSON. Filtra los items donde `tags` no incluye `contiene-lactosa`. La respuesta sale del JSON, no del `.md`. Decime 'siguiente' cuando termines."*
+Aclará: *"Santi va a invocar `mcp__filesystem__list_directory` sobre `menu/` y después `mcp__filesystem__read_file` para cada JSON. Filtra los items donde `tags` no incluye `contiene-lactosa`. La respuesta sale del JSON, no del `.md`. Decime 'siguiente' cuando termines."*
 
 ### Después del prompt
 Comentá brevemente:
@@ -148,13 +148,13 @@ Soy un cliente. Quiero 3 milanesas napolitanas y una provoleta a la parrilla.
 ```
 
 Aclará lo que va a pasar:
-1. **Guillermo atiende y confirma el pedido.**
+1. **Santi atiende y confirma el pedido.**
 2. **Invoca a Gustavo** (subagente cocinero, rama 04). Gustavo:
    - Lee los items del menú vía `mcp__filesystem__read_file` para saber qué ingredientes consume cada plato.
    - Lee `stock/ingredientes.json` vía MCP.
    - Calcula consumo: 3 milas × 0.15 kg muzza + 1 provoleta = 0.45 + 1 unidad provoleta.
    - **Reescribe** `stock/ingredientes.json` con los valores nuevos vía `mcp__filesystem__write_file`.
-3. **Vuelve a Guillermo**, que entrega el plato.
+3. **Vuelve a Santi**, que entrega el plato.
 4. *(Opcional)* Pedile la cuenta — el cajero también pasa por el MCP.
 
 Decile: *"Cuando termine todo el flujo, decime 'siguiente'."*

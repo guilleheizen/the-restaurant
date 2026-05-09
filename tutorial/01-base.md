@@ -9,7 +9,7 @@ Tres conceptos fundamentales:
 2. **Contexto y tokens** — qué tiene Claude "en la cabeza" en una sesión.
 3. **`/knowledge` como referencia** — cómo darle al agente conocimiento que pueda consultar.
 
-En esta rama hay un único agente (Guillermo, el mesero) que hace todo: atiende, simula la cocina, cobra. Las próximas ramas van a agregar capas para dividir esas responsabilidades.
+En esta rama hay un único agente (Santi, el mesero) que hace todo: atiende, simula la cocina, cobra. Las próximas ramas van a agregar capas para dividir esas responsabilidades.
 
 ---
 
@@ -41,11 +41,11 @@ Pedile que tipee, en un mensaje aparte:
 Soy un cliente. Atendeme.
 ```
 
-Aclará: *"Vas a ver que Guillermo se presenta solo, sin que le hayas explicado nada. Cuando termines, decime 'siguiente'."*
+Aclará: *"Vas a ver que Santi se presenta solo, sin que le hayas explicado nada. Cuando termines, decime 'siguiente'."*
 
 ### Después del prompt (cuando el usuario dice "siguiente")
 Comentá brevemente:
-- Que Guillermo se presentó con onda y ofreció la carta porque `CLAUDE.md` ya estaba cargado al inicio.
+- Que Santi se presentó con onda y ofreció la carta porque `CLAUDE.md` ya estaba cargado al inicio.
 - **Takeaway:** *"si querés que Claude lo sepa siempre, va en CLAUDE.md."*
 
 Cerrá con: *"¿Pasamos al siguiente concepto?"* y esperá.
@@ -70,7 +70,7 @@ Pedile que tipee:
 ¿Cuántas calorías tiene la milanesa napolitana?
 ```
 
-Aclará: *"Guillermo NO debería saber. La info nutricional no está en `/knowledge/`. Y eso está bien — el agente conoce sus límites. Decime 'siguiente'."*
+Aclará: *"Santi NO debería saber. La info nutricional no está en `/knowledge/`. Y eso está bien — el agente conoce sus límites. Decime 'siguiente'."*
 
 ### Después del prompt
 Comentá brevemente:
@@ -98,7 +98,7 @@ Pedile que tipee:
 ¿Qué me recomendás de tomar con un asado?
 ```
 
-Aclará: *"Guillermo va a recomendar Malbec citando una regla de maridajes. Esa regla vive en `knowledge/reglas-casa/recomendaciones-chef.md`. Después podés abrirlo y compará. Decime 'siguiente'."*
+Aclará: *"Santi va a recomendar Malbec citando una regla de maridajes. Esa regla vive en `knowledge/reglas-casa/recomendaciones-chef.md`. Después podés abrirlo y compará. Decime 'siguiente'."*
 
 ### Después del prompt
 Comentá brevemente:
@@ -116,7 +116,7 @@ Decile al usuario, en su tono natural pero con esta estructura:
 > - **Contexto y tokens** — qué tiene Claude en la cabeza, y qué cuesta.
 > - **`/knowledge` como referencia** — back-office consultable.
 >
-> Tenés un agente único (Guillermo) que sabe quién es y dónde consultar.
+> Tenés un agente único (Santi) que sabe quién es y dónde consultar.
 >
 > La próxima rama agrega **Skills**: habilidades que disparás manualmente con `/<nombre>` o que Claude carga solo cuando detecta que las necesita.
 >
