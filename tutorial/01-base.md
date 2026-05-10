@@ -1,130 +1,110 @@
 # Tutorial — Rama `01-base`
 
-> Este archivo lo lee el modo tutor cuando el usuario está en la rama `01-base`. Contiene el guion del recorrido. Adaptá el lenguaje, no copies frases textualmente.
+> Este archivo lo lee el modo tutor cuando el usuario está en la rama `01-base`. Adaptá el lenguaje, no copies frases textualmente. **Mostrale al usuario los paths como rutas absolutas** (cliqueables en su editor), no como markdown-links relativos.
+
+## Lo que es este repo (decir antes que cualquier concepto)
+
+Antes de explicar nada técnico, el tutor abre con dos cosas:
+
+1. **Qué es esto.** Un repo de **ejemplo** para aprender a configurar un proyecto real con Claude Code. La metáfora es un restaurante (**La Esquina Criolla**) — cada concepto técnico (`CLAUDE.md`, skills, hooks, agents, MCPs) tiene su analogía concreta en el negocio. El objetivo es que el usuario lleve los patrones a sus propios proyectos: si entendió por qué Santi necesita una skill `cerrar-mesa`, va a entender por qué su propio proyecto necesita una skill `deploy-pr`.
+2. **Quién habla.** Cuando salgamos del modo tutor y disparemos los prompts de prueba, la voz que responde es **Santi**, el mesero. Él es el agente principal en esta rama (en ramas posteriores aparecen Gustavo, el chef, y un cajero como subagentes). Cuando veas tono cálido y modismos rioplatenses, ese es Santi — no el tutor.
 
 ## Lo que se recorre en esta rama
 
 Tres conceptos fundamentales:
-1. **CLAUDE.md** — cómo se le indican a Claude las reglas de un proyecto.
-2. **Contexto y tokens** — qué tiene Claude "en la cabeza" en una sesión.
-3. **`/knowledge` como referencia** — cómo darle al agente conocimiento que pueda consultar.
 
-En esta rama hay un único agente (Santi, el mesero) que hace todo: atiende, simula la cocina, cobra. Las próximas ramas van a agregar capas para dividir esas responsabilidades.
+1. **`CLAUDE.md`** — el archivo de reglas que Claude carga al iniciar.
+2. **Contexto y tokens** — qué tiene Claude "en la cabeza" en una sesión y qué cuesta.
+3. **`/knowledge` como referencia** — conocimiento del proyecto que el agente consulta on-demand.
 
 ---
 
 ## Saludo inicial
 
-Decile al usuario, en una o dos frases:
-- En qué rama está.
-- Que vamos a ver tres conceptos.
-- Que el formato de cada concepto es: **explicación corta → archivo a abrir → prompt para probar → comentario corto post-prueba**.
+Hacé un saludo de 3-4 frases que cubra:
 
-Cerrá el saludo con una invitación tipo *"¿Arrancamos? Decime 'dale' cuando estés listo."* y esperá.
+- Que es la rama `01-base`, primera del recorrido.
+- **Qué es este repo** (punto 1 de arriba) — usar lenguaje propio, no recitar.
+- **Que Santi va a ser la voz** que aparece cuando dispares los prompts de prueba.
+- Que vamos a ver tres conceptos, formato corto: explicación → archivo a abrir → prompt → cierre.
+
+Cerrá con *"¿Arrancamos? Decime 'dale' cuando estés listo."* y esperá.
 
 ---
 
-## Concepto 1 — CLAUDE.md
+## Concepto 1 — `CLAUDE.md`
 
-### Explicación que tenés que dar
-`CLAUDE.md` es el archivo que Claude Code lee al iniciar una sesión en una carpeta. Acá van las reglas que querés que estén **siempre** en el contexto: tono, restricciones, dónde están los recursos del proyecto, qué hacer y qué no.
+`CLAUDE.md` es el archivo que Claude Code lee al iniciar una sesión en una carpeta. Acá van las reglas que querés **siempre** en el contexto: tono, restricciones, dónde están los recursos, qué hacer y qué no.
 
-### Pedile al usuario que abra
-[`CLAUDE.md`](../CLAUDE.md) en la raíz del repo.
+**En este repo vive en:** `/Users/guilleheizen/Documents/gdg/charla-agentes/the-restaurant/CLAUDE.md`
 
-Comentá brevemente: son las reglas de La Esquina Criolla — quiénes son los personajes, en qué moneda se cobra, dónde vive el menú, cómo se manejan las quejas.
+Pedile al usuario que lo abra y lo lea por arriba — son las reglas de La Esquina Criolla: quiénes son los personajes, en qué moneda se cobra, dónde vive el menú, cómo se manejan las quejas.
 
 ### Prompt para probar
-Pedile que tipee, en un mensaje aparte:
 
 ```
 Soy un cliente. Atendeme.
 ```
 
-Aclará: *"Vas a ver que Santi se presenta solo, sin que le hayas explicado nada. Cuando termines, decime 'siguiente'."*
+Aclará: *"Vas a ver que Santi se presenta solo, sin que le hayas explicado nada. Eso pasa porque `CLAUDE.md` ya estaba en el contexto desde el inicio. Decime 'siguiente' cuando termines."*
 
-### Después del prompt (cuando el usuario dice "siguiente")
-Comentá brevemente:
-- Que Santi se presentó con onda y ofreció la carta porque `CLAUDE.md` ya estaba cargado al inicio.
-- **Takeaway:** *"si querés que Claude lo sepa siempre, va en CLAUDE.md."*
-
-Cerrá con: *"¿Pasamos al siguiente concepto?"* y esperá.
+### Takeaway (al volver)
+*"Si querés que Claude lo sepa siempre, va en `CLAUDE.md`."*
 
 ---
 
 ## Concepto 2 — Contexto y tokens
 
-### Explicación que tenés que dar
-- **Contexto** = lo que Claude tiene "en la cabeza" durante una sesión: tu mensaje, archivos que leyó, respuestas anteriores. Es finito. Cuando se llena, empieza a tirar cosas viejas.
-- **Tokens** = la unidad. Cargar todo `/knowledge/` al inicio gasta tokens *aunque no uses todo*.
+- **Contexto** = lo que Claude tiene en la cabeza durante una sesión: tu mensaje, archivos que leyó, respuestas anteriores. Es finito.
+- **Tokens** = la unidad. Cargar todo `/knowledge/` al inicio costaría tokens *aunque no uses todo*.
 
-### Pedile al usuario que abra
-El árbol [`knowledge/`](../knowledge/) en su editor. Que vea las subcarpetas: menú, recetas, reglas, personajes, stock.
+Pedile al usuario que abra el árbol `/Users/guilleheizen/Documents/gdg/charla-agentes/the-restaurant/knowledge/` y vea las subcarpetas (menú, recetas, reglas, personajes, stock).
 
-Comentá: *"imaginá que cada archivo se carga al contexto cuando Claude lo lee. ¿Cuánto contexto se quemaría si esto fueran 5000 líneas?"*
+Comentá: *"imaginá si esto fueran 5000 líneas — cada lectura quemaría contexto"*.
 
 ### Prompt para probar
-Pedile que tipee:
 
 ```
 ¿Cuántas calorías tiene la milanesa napolitana?
 ```
 
-Aclará: *"Santi NO debería saber. La info nutricional no está en `/knowledge/`. Y eso está bien — el agente conoce sus límites. Decime 'siguiente'."*
+Aclará: *"Santi NO debería saberlo — la info nutricional no está en `/knowledge/`. Que el agente conozca sus límites también está bien. Decime 'siguiente'."*
 
-### Después del prompt
-Comentá brevemente:
-- Si quisieras que lo supiera, lo agregás a `/knowledge/`. Pero ojo: cada cosa que agregás, gasta tokens en cada sesión.
-- **Takeaway:** *"contexto es lo que tiene en la cabeza ahora. Por eso no todo se carga siempre — eso lo resolvemos con skills en la próxima rama."*
-
-Cerrá con: *"¿Seguimos?"* y esperá.
+### Takeaway (al volver)
+*"Cargar todo siempre cuesta tokens. La próxima rama (skills) muestra cómo cargar cosas solo cuando hacen falta."*
 
 ---
 
 ## Concepto 3 — `/knowledge` como referencia
 
-### Explicación que tenés que dar
-`/knowledge/` es una carpeta convencional (no es magia de Claude Code) donde guardás conocimiento del proyecto que el agente puede consultar **on demand**. Lo nombrás en `CLAUDE.md` para que Claude sepa que existe y vaya a buscar cuando hace falta.
+`/knowledge/` es una carpeta convencional (no es magia de Claude Code) donde guardás conocimiento del proyecto que el agente consulta **on-demand**. La nombrás en `CLAUDE.md` para que Claude sepa que existe.
 
-### Pedile al usuario que abra
-[`knowledge/personajes/gustavo-sevilla.md`](../knowledge/personajes/gustavo-sevilla.md).
-
-Comentá: *"ahí está la personalidad del chef. Cuando llegue Gustavo como subagente en la rama `04-agents`, va a leer este mismo archivo para saber cómo es."*
+Pedile que abra `/Users/guilleheizen/Documents/gdg/charla-agentes/the-restaurant/knowledge/personajes/gustavo-sevilla.md`. Ahí está la personalidad del chef. (En la rama `04-agents` Gustavo aparece como subagente y lee este mismo archivo.)
 
 ### Prompt para probar
-Pedile que tipee:
 
 ```
 ¿Qué me recomendás de tomar con un asado?
 ```
 
-Aclará: *"Santi va a recomendar Malbec citando una regla de maridajes. Esa regla vive en `knowledge/reglas-casa/recomendaciones-chef.md`. Después podés abrirlo y compará. Decime 'siguiente'."*
+Aclará: *"Santi va a recomendar Malbec citando una regla que vive en `/Users/guilleheizen/Documents/gdg/charla-agentes/the-restaurant/knowledge/reglas-casa/recomendaciones-chef.md`. Después podés abrirlo y comparar. Decime 'siguiente'."*
 
-### Después del prompt
-Comentá brevemente:
-- La respuesta sale literalmente del archivo. Eso es `/knowledge` funcionando como back-office del agente.
-- **Takeaway:** *"`/knowledge` separa conocimiento de comportamiento. En la rama `05-mcps` lo migramos a una bóveda externa, pero el patrón sigue."*
+### Takeaway (al volver)
+*"`/knowledge` separa **conocimiento** de **comportamiento**. En la rama `05-mcps` lo migramos a una bóveda externa, pero el patrón sigue."*
 
 ---
 
 ## Cierre de la rama
 
-Decile al usuario, en su tono natural pero con esta estructura:
+Decile, en tono propio:
 
-> "Listo. Viste los tres conceptos de `01-base`:
-> - **CLAUDE.md** — reglas siempre cargadas.
+> "Listo. Lo que viste:
+> - **`CLAUDE.md`** — reglas siempre cargadas.
 > - **Contexto y tokens** — qué tiene Claude en la cabeza, y qué cuesta.
 > - **`/knowledge` como referencia** — back-office consultable.
 >
-> Tenés un agente único (Santi) que sabe quién es y dónde consultar.
+> Tenés un agente único (Santi) que sabe quién es y dónde consultar. La próxima rama agrega **Skills** — habilidades disparables manualmente con `/<nombre>` o cargadas solas cuando Claude detecta que las necesita.
 >
-> La próxima rama agrega **Skills**: habilidades que disparás manualmente con `/<nombre>` o que Claude carga solo cuando detecta que las necesita.
->
-> Para seguir, hacé:
-> ```bash
-> git checkout 02-skills
-> ```
->
-> Cuando estés en la nueva rama, decime 'listo' y seguimos."
+> Voy a hacer el `git checkout 02-skills` cuando me confirmes."
 
-Después esperá.
+Esperá confirmación; cuando confirme, ejecutá vos el `git checkout` (memoria *Tutorial — yo ejecuto los checkouts*) y arrancá con `tutorial/02-skills.md`.
