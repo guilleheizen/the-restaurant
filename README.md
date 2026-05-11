@@ -422,8 +422,11 @@ Pasos para adaptar el repo a tu caso:
 
 ## Estructura del repo
 
+**Base presente en TODAS las ramas** (`01-base` → `05-mcps` y `main`):
+
 ```
 the-restaurant/
+├── README.md                  # Este documento
 ├── CLAUDE.md                  # Reglas del proyecto (manual del empleado)
 ├── knowledge/                 # Conocimiento del dominio
 │   ├── menu/                  # Carta dividida por categorías
@@ -431,28 +434,30 @@ the-restaurant/
 │   ├── stock/                 # Inventario (cambia con cada pedido)
 │   ├── reglas-casa/           # Horarios, política de quejas, recomendaciones
 │   └── personajes/            # Personalidades de los agentes
-└── pedidos-ejemplo/           # Conversaciones de prueba
-```
-
-En `main` ya hay:
-
-```
-├── .claude/
-│   └── skills/
-│       └── empezamos/         # El tutor del recorrido (esta misma skill)
-│           └── SKILL.md
-└── tutorial/                  # Guion del tutor, una sub-página por rama
-    └── 01-base.md
-```
-
-A partir de la rama `02`, aparece también:
-
-```
+├── pedidos-ejemplo/           # Conversaciones de prueba
+├── tutorial/                  # Guion del tutor, una sub-página por rama
+│   ├── 01-base.md
+│   ├── 02-skills.md
+│   ├── 03-hooks.md
+│   ├── 04-agents.md
+│   └── 05-mcps.md
 └── .claude/
-    ├── skills/                # Skills (rama 02). Cada una define un atajo `/<nombre>` invocable a mano o autoinvocable.
-    ├── settings.json          # Hooks (rama 03)
-    └── agents/                # Subagentes (rama 04)
+    └── skills/
+        └── empezamos/         # La skill que activa el modo tutor
+            └── SKILL.md
 ```
+
+**Qué agrega cada rama (acumulativo):**
+
+| Rama | Se agrega sobre la anterior |
+|------|-----------------------------|
+| `01-base` | (base) |
+| `02-skills` | `.claude/skills/{tomar-pedido,cerrar-mesa,cocteleria}/` |
+| `03-hooks` | `.claude/hooks/{validate-pedido-line,update-caja-dia}.sh` + `.claude/settings.json` |
+| `04-agents` | `.claude/agents/{gustavo,cajero}.md` |
+| `05-mcps` | `tutorial/data-seed/` + `tutorial/setup-rama-05.sh` (seed para `~/the-restaurant-data/`) y `CLAUDE.md` con la nota del MCP |
+
+`main` contiene el **estado final acumulado** (idéntico a `05-mcps`). Si querés ver el restaurante completo, mirás `main`; si querés recorrerlo paso a paso, hacés `git checkout 01-base` y arrancás el tutor con `/empezamos`.
 
 ---
 
