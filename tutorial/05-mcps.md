@@ -37,40 +37,29 @@ Preguntale al usuario:
 
 **No asumir el nombre `vault/`.** Y nunca dentro del repo.
 
-### Paso 2 — Crear y poblar la bóveda (yo ejecuto)
+### Paso 2 — Setup todo en uno (yo ejecuto)
 
-Una vez que tengas el path:
+Un solo comando hace todo: copia el seed a la bóveda **y** registra el filesystem MCP. Es idempotente, se puede correr de nuevo sin romper nada.
 
 ```bash
 ./tutorial/setup-rama-05.sh <path-de-la-bóveda>
 ```
 
-Si el destino existe, el script pregunta si sobrescribir. Si el usuario ya dio luz verde, podés tirar `yes |` adelante.
+(Si no pasás path, usa el default `../the-restaurant-data`. Agregá `--force` si querés que sobrescriba sin preguntar.)
 
-### Paso 3 — Registrar el filesystem MCP (yo ejecuto)
+El script va a:
+1. Poblar la bóveda con los JSON de `menu/` y `stock/` desde `tutorial/data-seed/`.
+2. Registrar el MCP con `claude mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem <bóveda>`.
+3. Imprimir `claude mcp list` para verificar.
 
-```bash
-claude mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem <path-de-la-bóveda>
-```
+Si algo falla, el script lo dice claro. Mostrale al usuario el output entero.
 
-### Paso 4 — Verificar (yo ejecuto)
-
-```bash
-claude mcp list
-```
-
-Confirmá que aparezca `filesystem ✓ Connected`. Después chequeá que la bóveda tenga los archivos esperados:
-
-```bash
-ls <path-de-la-bóveda>/menu <path-de-la-bóveda>/stock
-```
-
-### Paso 5 — Reinicio obligatorio del usuario
+### Paso 3 — Reinicio obligatorio del usuario
 
 > ⚠️ Después de registrar el MCP, **Claude Code no expone los nuevos tools en sesiones ya abiertas**. Decile al usuario:
-> *"Salí de Claude Code y volvé a entrar (en este mismo directorio). Cuando vuelvas, decime 'listo' — voy a verificar que las tools del MCP estén disponibles antes de seguir."*
+> *"Salí de Claude Code (Ctrl+D o /exit) y volvé a entrar en este mismo directorio. Cuando vuelvas, decime 'listo' — voy a verificar que las tools del MCP estén disponibles antes de seguir."*
 
-Cuando vuelva, hacé un `mcp__filesystem__list_directory` con path `menu/` para verificar que los tools están expuestos. Si responde, seguí. Si no, debug (probable: el `claude mcp list` ya no aparece, o el path está mal).
+Cuando vuelva, hacé un `mcp__filesystem__list_directory` con path `menu/` para verificar que los tools están expuestos. Si responde, seguí. Si no, debug (probable: `claude mcp list` no muestra `filesystem ✓ Connected`, o la bóveda está vacía).
 
 ---
 
@@ -168,9 +157,10 @@ Esperá. Si dice que sí, hacé el reset (yo ejecuto):
 
 ```bash
 cp /Users/guilleheizen/Documents/gdg/charla-agentes/the-restaurant/tutorial/data-seed/stock/ingredientes.json <bóveda>/stock/ingredientes.json
+cp /Users/guilleheizen/Documents/gdg/charla-agentes/the-restaurant/tutorial/data-seed/menu/*.json <bóveda>/menu/
 rm -f /Users/guilleheizen/Documents/gdg/charla-agentes/the-restaurant/pedidos-cerrados/*.md
 rm -f /Users/guilleheizen/Documents/gdg/charla-agentes/the-restaurant/caja-del-dia.txt
-claude mcp remove filesystem
+claude mcp remove filesystem 2>/dev/null || true
 git -C /Users/guilleheizen/Documents/gdg/charla-agentes/the-restaurant checkout main
 ```
 
